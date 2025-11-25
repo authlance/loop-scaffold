@@ -1,0 +1,32 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Authlance Licenses",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "runtimeExecutable": "/Users/nacho/.nvm/versions/node/v20.6.1/bin/node",
+            "program": "${workspaceRoot}/examples/browser/src-gen/backend/main.js",
+            "args": [
+                "--hostname=0.0.0.0",
+                "--port=3000",
+                "--config=${workspaceFolder}/app-config.json"
+            ],
+            "env": {
+                "NODE_ENV": "development",
+                "LOOP_DEBUG": "true",
+                "DEV_PROXY_WEBPACK": "true",
+                "NODE_TLS_REJECT_UNAUTHORIZED": "0"
+            },
+            "outFiles": [
+                "${workspaceFolder}/**/*.js"
+            ],
+        }
+    ]
+}

@@ -1,0 +1,13 @@
+.git
+.gitignore
+.DS_Store
+node_modules
+**/node_modules
+dist
+lib
+*.log
+yarn-error.log
+lerna-debug.log
+*.tsbuildinfo
+coverage
+tmp

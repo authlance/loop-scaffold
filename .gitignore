@@ -1,0 +1,12 @@
+dist
+node_modules
+lib
+examples/*/src-gen
+examples/*/webpack.config.js
+yarn-error.log
+lerna-debug.log
+git_push.sh
+.openapi-generator-ignore
+.openapi-generator
+nacho-app-config.json
+.eslintcache

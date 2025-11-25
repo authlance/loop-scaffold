@@ -1,0 +1,7 @@
+apiVersion: v2
+name: authlance-license-loop
+description: AuthLance License Loop
+
+type: application
+version: 1.2.9
+appVersion: "1.0.0"

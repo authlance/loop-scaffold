@@ -1,0 +1,57 @@
+FROM node:20-bullseye
+
+# Install dependencies first
+RUN apt-get update && apt-get install -y \
+    python3 \
+    python3-dev \
+    python3-pip \
+    ca-certificates \
+    curl \
+    gnupg \
+    nginx \
+    make \
+    g++ \
+    && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /app
+
+ARG NPM_AUTH_TOKEN
+RUN echo "registry=https://registry.npmjs.org/" > /root/.npmrc && \
+    echo "@authlance:registry=https://npm.pkg.github.com/" >> /root/.npmrc && \
+    echo "//npm.pkg.github.com/:_authToken=${NPM_AUTH_TOKEN}" >> /root/.npmrc && \
+    echo "always-auth=true" >> /root/.npmrc
+
+COPY . /app
+COPY ./deployment/nginx/nginx.conf /etc/nginx/nginx.conf
+COPY ./deployment/nginx/duna.conf /etc/nginx/sites-enabled/duna.conf
+COPY deployment/startup/start-loop.sh /app/start-loop.sh
+
+RUN rm -f examples/browser/.env && mv examples/browser/.env-production examples/browser/.env
+
+# delete NODE_ENV=production from .env to allow dev builds
+RUN if [ -f examples/browser/.env ]; then sed -i '/NODE_ENV=production/d' examples/browser/.env; fi
+
+RUN rm -rf deployment
+
+RUN yarn install --frozen-lockfile
+
+RUN cd examples/browser && \
+  mkdir -p lib/styles && \
+  npx tailwindcss -i ./src/styles/index.css \
+    -o ./lib/styles/output.css \
+    --content "./src-gen/frontend/**/*.{js,ts,jsx,tsx}" \
+    --content "../../packages/core/src/**/*.{js,ts,jsx,tsx}" \
+    --content "../../packages/loop-layout/src/**/*.{js,ts,jsx,tsx}" && \
+  rm -f lib/styles/index.css && \
+  mv lib/styles/output.css lib/styles/index.css
+
+RUN rm /root/.npmrc
+
+RUN chmod +x /app/start-loop.sh
+
+RUN groupadd -g 102 nginx && \
+    useradd -r -u 101 -g 102 -s /sbin/nologin -d /var/cache/nginx nginx
+
+EXPOSE 3000
+
+CMD ["/app/start-loop.sh"]

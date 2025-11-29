@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "@loop/browser",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "EPL-2.0 OR GPL-2.0 WITH Classpath-exception-2.0",
   "loop": {
     "frontend": {
@@ -26,7 +26,7 @@
     "@authlance/postmark": "^1.0.1",
     "@authlance/ui": "^1.0.1",
     "@authlance/sequelize": "^1.0.1",
-    "@loop/core": "^1.0.0",
+    "@loop/core": "^1.0.1",
     "@ory/elements-react": "1.1.0"
   },
   "scripts": {
@@ -50,8 +50,8 @@
     "unpublish": "echo 'Package not published, skipping.'"
   },
   "devDependencies": {
-    "@authlance/cli": "1.0.0",
-    "@authlance/ext-scripts": "1.0.0",
+    "@authlance/cli": "1.0.1",
+    "@authlance/ext-scripts": "1.0.1",
     "@tailwindcss/postcss7-compat": "^2.2.17",
     "@tailwindcss/typography": "^0.5.12",
     "autoprefixer": "^10.4.20",

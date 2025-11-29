@@ -1,43 +1,68 @@
 {
-    "database": {
-        "user": "authlance",
-        "password": "1234",
-        "host": "127.0.0.1",
-        "port": 3306,
-        "schema": "authlance-loop"
-    },
-    "cors": {
-        "allowedOrigins": [
-            "https://new.example.com",
-            "https://local.example.com"
-        ]
-    },
-    "nats": {
-        "url": "nats://localhost:4222"
-    },
-    "postmark": {
-        "server": "XXXXX",
-        "key": "XXXXX",
-        "company": "XXXXX",
-        "templates": {
-            "verification_code_valid": {
-                "alias": "XXXXX",
-                "from": "XXXXX",
-                "fromName": "XXXXX",
-                "fromPosition": "XXXXX"
-            },
-            "recovery_code_valid": {
-                "alias": "XXXXX",
-                "from": "XXXXX",
-                "fromName": "XXXXX",
-                "fromPosition": "XXXXX"
-            }
-        }
-    },
-    "jwtSecret": "XXXXXX",
-    "rootAppUrl": "https://new.example.com",
-    "basePath": "/authlance/loop",
-    "frontEndBasePath": "/",
-    "pat": "pat_XXXXXXXX"
+  "database": {
+    "user": "user",
+    "password": "secret1234",
+    "host": "127.0.0.1",
+    "port": 3307,
+    "schema": "duna-loop"
+  },
+  "cors": {
+    "allowedOrigins": [
+      "https://local.example.com"
+    ]
+  },
+  "nats": {
+    "url": "nats://localhost:4222"
+  },
+  "postmark": {
+    "server": "example",
+    "key": "POSTMARK_KEY",
+    "company": "Duna",
+    "templates": {
+      "verification_code_valid": {
+        "alias": "verify-email",
+        "from": "no-reply@example.com",
+        "fromName": "Example",
+        "fromPosition": "example"
+      },
+      "recovery_code_valid": {
+        "alias": "recover-account",
+        "from": "no-reply@example.com",
+        "fromName": "Example",
+        "fromPosition": "example"
+      },
+      "purchase_notification": {
+        "alias": "purchase-notification",
+        "from": "no-reply@example.com",
+        "fromName": "Example",
+        "fromPosition": "example"
+      },
+      "venue_approved": {
+        "alias": "venue-approved",
+        "from": "no-reply@example.com",
+        "fromName": "Example",
+        "fromPosition": "example"
+      },
+      "dispute_notification": {
+        "alias": "dispute-notification",
+        "from": "no-reply@example.com",
+        "fromName": "Example",
+        "fromPosition": "example"
+      },
+      "payouts-disabled": {
+        "alias": "payouts-disabled",
+        "from": "no-reply@example.com",
+        "fromName": "Example",
+        "fromPosition": "example"
+      }
+    }
+  },
+  "jwtSecret": "REPLACE_ME_WITH_JWT_SECRET",
+  "stripeSecretKey": "REPLACE_ME_WITH_STRIPE_KEY",
+  "stripeWebhookSecret": "REPLACE_ME_WITH_STRIPE_WEBHOOK_SECRET",
+  "stripeWebhookBaseUrl": "https://local.example.com",
+  "rootAppUrl": "https://local.example.com",
+  "basePath": "/authlance/loop",
+  "frontEndBasePath": "/",
+  "pat": "REPLACE_ME_WITH_PAT"
 }
-

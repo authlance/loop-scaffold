@@ -18,15 +18,15 @@
     "lib"
   ],
   "dependencies": {
-    "@authlance/core": "1.0.0",
-    "@authlance/common": "1.0.0",
-    "@loop/loop-layout": "1.0.0",
-    "@authlance/events-queue": "1.0.0",
-    "@authlance/identity": "1.0.0",
-    "@authlance/postmark": "1.0.0",
-    "@authlance/ui": "1.0.0",
-    "@authlance/sequelize": "1.0.0",
-    "@loop/core": "1.0.0",
+    "@authlance/core": "^1.0.1",
+    "@authlance/common": "^1.0.1",
+    "@loop/loop-layout": "^1.0.1",
+    "@authlance/events-queue": "^1.0.1",
+    "@authlance/identity": "^1.0.1",
+    "@authlance/postmark": "^1.0.1",
+    "@authlance/ui": "^1.0.1",
+    "@authlance/sequelize": "^1.0.1",
+    "@loop/core": "^1.0.0",
     "@ory/elements-react": "1.1.0"
   },
   "scripts": {

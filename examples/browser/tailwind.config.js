@@ -6,9 +6,15 @@ module.exports = {
     darkMode: ['selector', 'class'],
     content: [
         './src-gen/frontend/**/*.{js,ts,jsx,tsx}',
-        '../../node_modules/@authlance/**/*.{js,ts,jsx,tsx}',
         '../../packages/core/src/**/*.{js,ts,jsx,tsx}',
         '../../packages/loop-layout/src/**/*.{js,ts,jsx,tsx}',
+		'../../node_modules/@authlance/core/lib/**/*.js',
+		'../../node_modules/@authlance/identity/lib/**/*.js',
+		'../../node_modules/@authlance/ui/lib/**/*.js',
+		'../../node_modules/@authlance/sidebar/lib/**/*.js',
+		'../../node_modules/@authlance/payments/lib/**/*.js',
+		'../../node_modules/@authlance/license-core/lib/**/*.js',
+		'../../node_modules/@authlance/license-layout/lib/**/*.js',
     ],
     theme: {
     	container: {
